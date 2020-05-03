@@ -28,8 +28,8 @@ public class Boss
     //  発展課題：mpが足りない場合、「MPが足りないため魔法が使えない。」と表示してください
     public void Magic()
     {
-        this.mp -= 5;
         if (mp >= 5) {
+            this.mp -= 5;
             Debug.Log("魔法攻撃をした。残りMPは" + mp + "。");
         }
         else
@@ -71,8 +71,12 @@ public class Test : MonoBehaviour
         lastboss.Attack();
         // 防御用の関数を呼び出す
         lastboss.Defence(3);
-        //  魔法攻撃用の関数を呼び出す
-        lastboss.Magic();
+        // 発展課題：魔法攻撃用の関数を11回呼び出す
+        for (int i = 0; i < 11; i++)
+        {
+            lastboss.Magic();
+        }
+
     }
 
     // Update is called once per frame
